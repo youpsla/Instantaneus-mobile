@@ -1,0 +1,63 @@
+Logfile initialized
+[INFO] logfile = C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\build.log
+[DEBUG] From: C:\Program Files\Android\android-sdk\tools\emulator.exe
+[DEBUG] SDCard: C:\Users\alain\.titanium\android2.sdcard
+[DEBUG] AVD ID: 1
+[DEBUG] AVD Skin: HVGA
+[DEBUG] C:\Users\alain\AppData\Roaming\Titanium\mobilesdk\win32\1.8.0.1\android\builder.py simulator Instantaneus C:\Program Files\Android\android-sdk C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus com.instantaneus.mobile 1 HVGA /127.0.0.1:55578
+[DEBUG] SDK: C:\Program Files\Android\android-sdk
+[INFO] Building Instantaneus for Android ... one moment
+[DEBUG] C:\Program Files\Android\android-sdk\tools\emulator.exe -avd titanium_1_HVGA -port 5560 -sdcard "C:\Users\alain\.titanium\titanium_1_HVGA.sdcard" -logcat *:d,* -no-boot-anim -partition-size 128
+[INFO] Titanium SDK version: 1.8.0.1 (12/22/11 13:09 fbdc96f)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 0 devices/emulators
+[INFO] Android Emulator has exited
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[INFO] Launching application ... Instantaneus
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 95 seconds)
+[DEBUG] waited 98.734000 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
+[TRACE] Launch output: Error type 2
+android.util.AndroidException: Can't connect to activity manager; is the system running?
+
+[INFO] Deployed Instantaneus ... Application should be running.
+[ERROR] Timed out waiting for android.process.acore
+[DEBUG] com.instantaneus.mobile installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
+[INFO] Copying project resources..
+[INFO] Tiapp.xml unchanged, skipping class generation
+[DEBUG] Processing Android resource drawables
+[DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-long-land-hdpi\default.png
+[DEBUG] found drawable-long-land-ldpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-long-land-ldpi\default.png
+[DEBUG] found drawable-long-port-hdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-long-port-hdpi\default.png
+[DEBUG] found drawable-long-port-ldpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-long-port-ldpi\default.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-land-hdpi\default.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-land-ldpi\default.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-land-mdpi\default.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-port-hdpi\default.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-port-ldpi\default.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at C:\Users\alain\Documents\Taff\Flash\Titanium Studio Workspace\Instantaneus\Resources\android\images\res-notlong-port-mdpi\default.png
+[INFO] Waiting for SDCard to become available..
+[INFO] Re-launching application ... Instantaneus
+[INFO] Launching application ... Instantaneus
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.instantaneus.mobile/.InstantaneusActivity }
+
+[INFO] Forwarding host port 55578 to device for debugging.
