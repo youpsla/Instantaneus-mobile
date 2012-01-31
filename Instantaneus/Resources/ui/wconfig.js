@@ -1,7 +1,8 @@
 //Fenêtre de configuration des informations utilisateur
 function InputEmailFormView() {
 	//load dependencies
-	network = require('services/network');
+	//var network = require('services/network'), 
+	var checkUser = require('services/network').checkUser,
 	store = require('services/store')
 	
 	//create object instance
@@ -11,7 +12,8 @@ function InputEmailFormView() {
 		top: 5,
 		bottom: 5,
 		backgroundColor: '#fff',
-		borderRadius: 5
+		borderRadius: 5,
+		zindex:1
 	});
 	
 	//construct ui
@@ -67,12 +69,15 @@ function InputEmailFormView() {
 	    else {
 	    	Ti.API.info('Bouton Email cliqué');
 	    	// CheckUser function launch. Return 1 if email is in database, 0 instead.
-	    	network.checkUser(tfEmail.value);
+	    	//var checkUser = new network.checkUser()
+	    	checkUser(tfEmail.value);
 	    	// EventListener wich capture the value 1 or 0
 	    	Ti.App.addEventListener('etatEmail', function(e) {
 				if (e.etat == 1) {
+					Ti.API.info('Avant fireEvent');
 					store.saveEmail(e.email);
-					buttonEmail.visible=false;
+					Ti.App.fireEvent('showListInstantsView');
+					Ti.App.fireEvent('openListInstants', 'dada');
 					}
 				else {
 					var alertDialog = Ti.UI.createAlertDialog({
@@ -94,4 +99,3 @@ function InputEmailFormView() {
 }
 
 module.exports = InputEmailFormView;
-

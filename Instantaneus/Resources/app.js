@@ -1,5 +1,6 @@
 var ApplicationWindow = require ('ui/ApplicationWindow');
-new ApplicationWindow().open();
+tt = new ApplicationWindow();
+tt.open();
 
 
 // // create tab group
