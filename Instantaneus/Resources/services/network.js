@@ -57,20 +57,21 @@ exports.listInstantsNetwork = function (email) {
 			}
 		else {
 			Ti.API.info(data.length + ' Instants pour le client: ' + email);
-			var i = 0,
-				key,
-				instant;
-			for (;i < len; i++) {
-				instant = data[i];
-				Ti.API.info(instant);
-					for (key in instant) {
-						Ti.API.info(key + '==' + instant[key]);
-					}
-			}
+			//var i = 0,
+			//	key,
+			//	instant;
+			//for (;i < len; i++) {
+			//	instant = data[i];
+			//	Ti.API.info(instant);
+			//		for (key in instant) {
+			//			Ti.API.info(key + '==' + instant[key]);
+			//		}
+			//}
 			Ti.API.info(JSON.stringify(data));
-			strdata=JSON.stringify(data);
-			storeListeInstants(strdata);
-			var etat = 2;
+			Ti.App.fireEvent("buildTableListInstants", data)
+			//strdata=JSON.stringify(data);
+			//storeListeInstants(strdata);
+			//var etat = 2;
 		}
 	};
 		

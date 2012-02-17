@@ -1,20 +1,28 @@
 //Fenêtre de configuration des informations utilisateur
-function InputEmailFormView() {
+function ConfigurationWindow() {
+	
 	//load dependencies
 	//var network = require('services/network'), 
-	var checkUser = require('services/network').checkUser,
-	store = require('services/store')
+	var checkUser = require('services/network').checkUser;
 	
 	//create object instance
-	var self = Titanium.UI.createView({
+	var self = Ti.UI.createWindow({
+		backgroundcolor : 'white',
+		visible: true,
+		exitOnClose: false
+	});
+	
+	
+	var view = Titanium.UI.createView({
 		left: 5,
 		right: 5,
 		top: 5,
 		bottom: 5,
 		backgroundColor: '#fff',
 		borderRadius: 5,
-		zindex:1
+		zIndex:1
 	});
+	self.add(view);
 	
 	//construct ui
 	var logo = Titanium.UI.createImageView({
@@ -23,7 +31,7 @@ function InputEmailFormView() {
 		height: 48,
 		top: 0
 	});
-	self.add(logo);	
+	view.add(logo);	
 
 	var labelEmail = Titanium.UI.createLabel({
 	    width: '90%',
@@ -33,7 +41,7 @@ function InputEmailFormView() {
 	    font: {fontSize: 20, fontFamily: 'Helvetica', fontWeight: 'bold'},
 	    text: 'Saisissez ci-dessous l\'adresse Email que vous avez utilisée lors de l\'inscription sur le site web.'
 	});
-	self.add(labelEmail);
+	view.add(labelEmail);
 	
 	var tfEmail = Titanium.UI.createTextField({
 		width : '90%',
@@ -45,15 +53,16 @@ function InputEmailFormView() {
 		returnKeyType : Titanium.UI.RETURNKEY_DEFAULT,
 		hintText : 'example'
 	});
-	self.add(tfEmail);
+	view.add(tfEmail);
+	
 	
 	var buttonEmail = Titanium.UI.createButton({
 	   title: 'Valider',
 	   top: 280,
 	   width: 100,
-	   height: 50
+	   height: 30
 	});
-	self.add(buttonEmail);
+	view.add(buttonEmail);
 	
 	//add behavior
 	buttonEmail.addEventListener('click', function() {
@@ -71,26 +80,6 @@ function InputEmailFormView() {
 	    	// CheckUser function launch. Return 1 if email is in database, 0 instead.
 	    	//var checkUser = new network.checkUser()
 	    	checkUser(tfEmail.value);
-	    	// EventListener wich capture the value 1 or 0
-	    	Ti.App.addEventListener('etatEmail', function(e) {
-				if (e.etat == 1) {
-					Ti.API.info('Avant fireEvent');
-					store.saveEmail(e.email);
-					Ti.App.fireEvent('showListInstantsView');
-					Ti.App.fireEvent('openListInstants', 'dada');
-					}
-				else {
-					var alertDialog = Ti.UI.createAlertDialog({
-						title: 'KO. Adresse Email NON trouvée',
-						buttonNames: ['OK'],
-						cancel:0
-						});
-					alertDialog.show();
-					}
-			Ti.API.info('Fin du EventListener stateEmail')
-			// Destroy EventListener to avoid multiple execution
-			Ti.App.removeEventListener('etatEmail');
-			});
 	    }
 	});
 		
@@ -98,4 +87,4 @@ function InputEmailFormView() {
 	return self;
 }
 
-module.exports = InputEmailFormView;
+module.exports = ConfigurationWindow;
