@@ -6,11 +6,12 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.095000 seconds on emulator to get ready
+[DEBUG] waited 1.219000 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
 [DEBUG] com.instantaneus.mobile installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: C:\Users\alain\git\Instantaneus-mobile\Instantaneus\Resources\ui\ListInstantsView.js => C:\Users\alain\git\Instantaneus-mobile\Instantaneus\build\android\bin\assets\Resources\ui\ListInstantsView.js
+[TRACE] COPYING MODIFIED FILE: C:\Users\alain\git\Instantaneus-mobile\Instantaneus\Resources\ui\DetailsInstantWindow.js => C:\Users\alain\git\Instantaneus-mobile\Instantaneus\build\android\bin\assets\Resources\ui\DetailsInstantWindow.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\alain\git\Instantaneus-mobile\Instantaneus\Resources\android\images\res-long-land-hdpi\default.png

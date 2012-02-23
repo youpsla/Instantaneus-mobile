@@ -3,7 +3,6 @@ function ListInstantsWindow() {
 	//load dependencies
 	listInstantsNetwork = require('services/network').listInstantsNetwork;
 	populateListInstants = require('services/store').populateListInsants;
-
 	
 	//create object instance
 	var self = Ti.UI.createWindow({
@@ -51,9 +50,12 @@ function ListInstantsWindow() {
 		}
 	};
 	
+	var arrayInstants = [];
 	Ti.App.addEventListener('buildTableListInstants', function(e){
 		var data = [];
 		Ti.API.info('DATA: '+ e);
+		
+		
 
 		var i = 0,
 			key,
@@ -85,7 +87,20 @@ function ListInstantsWindow() {
 							height: 60,
 						});
 					row.add(mentionsLabel);
-					};	
+					};
+					if (key == "id") {
+						var id = instant['id'];
+						Ti.API.info('Instants : ' + instant['id']);
+						Ti.API.info('Instants ID : ' + instant);
+						// Event binding for showing details
+						row.addEventListener('click', function(){
+							Ti.API.info('click : before showing details' + instant);
+							var detailInstantWindow = require('ui/DetailsInstantWindow');
+							diw = new detailInstantWindow(instant);
+							diw.open();
+							Ti.API.info('click : after showing details');
+						});
+					};
 				};
 			data.push(row);
 		};
