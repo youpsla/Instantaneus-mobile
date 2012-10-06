@@ -2,11 +2,11 @@
 var storeListeInstants = require('services/store').storeListInstants;
 
 // Global variables for this module
-var SERVER_URL = 'http://192.168.0.10:8010/clients/api/';
+var SERVER_URL = 'http://192.168.1.13:8010/clients/api/';
 
 // implement check User email service interface
 exports.checkUser = function (email) {
-	var SERVER_URL = 'http://192.168.0.10:8010/clients/api/';
+	//var SERVER_URL = 'http://192.168.0.11:8010/clients/api/';
 	Ti.API.info('Valeur saisie dans le tfEmail (checkUser): ' + email);
 	var xhr = Ti.Network.createHTTPClient();
 	
@@ -53,7 +53,7 @@ exports.listInstantsNetwork = function (email) {
 		Ti.API.info('Nombre de champs de la réponse json: ' + data.length);
 		len = data.length;
 		if (len < '1'){
-			Ti.API.info('No intants for this client: ' + email);
+			Ti.API.info('No instants for this client: ' + email);
 			}
 		else {
 			Ti.API.info(data.length + ' Instants pour le client: ' + email);
@@ -80,7 +80,7 @@ exports.listInstantsNetwork = function (email) {
 		var alertDialog = Ti.UI.createAlertDialog({
 			title: 'Service innacessible',
 			messsage: 'Service inacessible',
-			buttonNames: ['OK'],
+			buttonNames: ['KO'],
 			cancel:0
 		});
 		alertDialog.show();

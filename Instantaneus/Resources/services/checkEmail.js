@@ -1,4 +1,4 @@
-var SERVER_URL = 'http://192.168.0.10:8010/clients/api/';
+var SERVER_URL = 'http://192.168.1.13:8010/clients/api/';
 
 // implement check User email service interface
 function checkUser (email) {

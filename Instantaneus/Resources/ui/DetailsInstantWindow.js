@@ -1,7 +1,8 @@
 //Detail Instants Window
-function DetailInstantWindow(instant) {
+function DetailInstantWindow(e) {
 	//load dependencies
 	//create object instance
+	//Ti.API.info('DetailsInstantWindow : ' + instant);
 	var self = Ti.UI.createWindow({
 		backgroundcolor : 'white',
 		modal:true,
@@ -24,8 +25,10 @@ function DetailInstantWindow(instant) {
 	    right: '5%',
 	    textAlign:'center',
 	    font: {fontSize: 18, fontFamily: 'Helvetica', fontWeight: 'bold'},
-	    text: instant['nom_commercial']
+	    //text: instant['nom_commercial']
+	    text: e.source.eventID,
 	});
+	Ti.API.info('Instant ID : ' + e.source.eventID);
 	view.add(labelNomMagasin);
 
 	var labelNomMagasin = Titanium.UI.createLabel({
@@ -35,8 +38,10 @@ function DetailInstantWindow(instant) {
 	    right: '5%',
 	    textAlign:'center',
 	    font: {fontSize: 22, fontFamily: 'Helvetica', fontWeight: 'bold'},
-	    text: instant['titre']
+	    //text: instant['titre']
+	    text: e.source.eventNom,
 	});
+	Ti.API.info('Instant Name : ' + e.source.eventNom);
 	view.add(labelNomMagasin);
 
 	return self;

@@ -54,9 +54,6 @@ function ListInstantsWindow() {
 	Ti.App.addEventListener('buildTableListInstants', function(e){
 		var data = [];
 		Ti.API.info('DATA: '+ e);
-		
-		
-
 		var i = 0,
 			key,
 			instant;
@@ -90,13 +87,22 @@ function ListInstantsWindow() {
 					};
 					if (key == "id") {
 						var id = instant['id'];
-						Ti.API.info('Instants : ' + instant['id']);
-						Ti.API.info('Instants ID : ' + instant);
+						Ti.API.info('Instants : ' + instant);
+						Ti.API.info('Instants ID : ' + instant['id']);
+						row.eventID = instant['id'];
+						row.eventNom = instant['nom'];
+						row.eventDescription = instant['description'];
+						row.eventBaseline = instant['baseline'];
+						row.eventAdresse = instant['adresse'];
+						row.eventDatedebut = instant['date_debut'];
+						row.eventDatefin = instant['date_fin'];
 						// Event binding for showing details
-						row.addEventListener('click', function(){
-							Ti.API.info('click : before showing details' + instant);
+						row.addEventListener('click', function(e){
+							Ti.API.info('click : before showing details' + instant['id']);
+							Ti.API.info('e.id : before showing details : ' + e.source.eventID);
 							var detailInstantWindow = require('ui/DetailsInstantWindow');
-							diw = new detailInstantWindow(instant);
+							diw = new detailInstantWindow(e);
+							//diw = new detailInstantWindow();
 							diw.open();
 							Ti.API.info('click : after showing details');
 						});
@@ -120,8 +126,6 @@ function ListInstantsWindow() {
 		rowHeight: 30,
 		hasChild: true,
 	});
-	
-	
 	
 	//Event listener to check if liw really open
 	self.addEventListener('open', function(event){

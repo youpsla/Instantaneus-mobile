@@ -16,14 +16,13 @@ Ti.App.addEventListener('showListInstantsView', function(){
 });
 
 //Event listener for dispalying the DetailInstantWindow
-Ti.App.addEventListener('showDetailInstantWindow', function(e){
-	Ti.API.info('showDetailInstantWindow listener started');
-	var detailInstantWindow = require('ui/DetailsInstantWindow.js');
-	diw = new ListIntantsWindow();
-	diw.open();
-	Ti.API.info('showDetailInstantWindow listener ended');
-
-});
+//Ti.App.addEventListener('showDetailInstantWindow', function(e){
+//	Ti.API.info('showDetailInstantWindow listener started - Instant : ' + e);
+//	var detailInstantWindow = require('ui/DetailsInstantWindow.js');
+//	diw = new detailIntantsWindow();
+//	diw.open();
+//	Ti.API.info('showDetailInstantWindow listener ended');
+//});
 
 
 
